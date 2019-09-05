@@ -114,8 +114,9 @@ public class LoginController extends BaseController{
 		
 		//验证码
 		String randCode = req.getParameter("randCode");
+		//  去掉验证码功能
 		if (StringUtils.isEmpty(randCode)) {
-			j.setMsg(mutiLangService.getLang("common.enter.verifycode"));
+/*			j.setMsg(mutiLangService.getLang("common.enter.verifycode"));
 			j.setSuccess(false);
 		} else if (!randCode.equalsIgnoreCase(String.valueOf(session.getAttribute("randCode")))) {
 			j.setMsg(mutiLangService.getLang("common.verifycode.error"));
@@ -127,7 +128,7 @@ public class LoginController extends BaseController{
 			j.setMsg(mutiLangService.getLang("common.blacklist.error"));
 			j.setSuccess(false);
 		}
-		else {
+		else {*/
 			//用户登录验证逻辑
 			TSUser u = userService.checkUserExits(user);
 			if (u == null) {

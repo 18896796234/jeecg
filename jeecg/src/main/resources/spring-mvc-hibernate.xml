@@ -112,6 +112,7 @@
 				<value>org.jeecgframework.web.black.*</value>
 				<value>org.jeecgframework.web.superquery.*</value>
 				<value>com.jeecg.*</value>
+				<value>com.ting.*</value>
 			</list>
 		</property>
 	</bean>

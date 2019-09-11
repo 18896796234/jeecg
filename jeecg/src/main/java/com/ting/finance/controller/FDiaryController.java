@@ -1,8 +1,10 @@
 package com.ting.finance.controller;
+import com.ting.common.util.DateUtilPJC;
 import com.ting.finance.entity.FDiaryEntity;
 import com.ting.finance.service.FDiaryServiceI;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -211,8 +213,12 @@ public class FDiaryController extends BaseController {
 	public ModelAndView goAdd(FDiaryEntity fDiary, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(fDiary.getId())) {
 			fDiary = fDiaryService.getEntity(FDiaryEntity.class, fDiary.getId());
+			String date = DateUtilPJC.getNow("yyyy-MM-dd");
+			fDiary.setCreateDate(new Date());
 			req.setAttribute("fDiary", fDiary);
 		}
+		String dateString = DateUtilPJC.getNow("yyyy-MM-dd");
+		req.setAttribute("dateString", dateString);
 		return new ModelAndView("com/ting/finance/fDiary-add");
 	}
 	/**

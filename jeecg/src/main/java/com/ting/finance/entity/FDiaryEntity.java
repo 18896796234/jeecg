@@ -57,6 +57,9 @@ public class FDiaryEntity implements java.io.Serializable {
 	/**日记类型*/
 	@Excel(name="日记类型",width=15,dicCode="diary_type")
 	private java.lang.String diaryType;
+	/**日记类型*/
+	@Excel(name="日记类型",width=15,dicCode="diary_theme")
+	private java.lang.String diaryTheme;
 	/**内容*/
 	@Excel(name="内容",width=15)
 	private java.lang.String content;
@@ -269,6 +272,27 @@ public class FDiaryEntity implements java.io.Serializable {
 	public void setDiaryType(java.lang.String diaryType){
 		this.diaryType = diaryType;
 	}
+	
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  日记类型
+	 */
+
+	@Column(name ="DIARY_THEME",nullable=true,length=32)
+	public java.lang.String getDiaryTheme(){
+		return this.diaryTheme;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  日记类型
+	 */
+	public void setDiaryTheme(java.lang.String diaryTheme){
+		this.diaryTheme = diaryTheme;
+	}
+	
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  内容

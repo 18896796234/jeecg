@@ -18,10 +18,10 @@
 		<input type="hidden" id="btn_sub" class="btn_sub"/>
 		<input type="hidden" id="id" name="id"/>
 		<div class="form-group">
-			<label for="createDate" class="col-sm-3 control-label">创建日期：</label>
+			<label for="diaryDate" class="col-sm-3 control-label">日期：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-				<input name="createDate" type="text" class="form-control laydate-date"  ignore="ignore"  />
+				<input name="diaryDate" type="text" class="form-control laydate-date"  ignore="ignore" value="${dateString}" />
 				<span class="input-group-addon" ><span class="glyphicon glyphicon-calendar"></span></span>
 				</div>
 			</div>
@@ -34,6 +34,8 @@
 				</div>
 			</div>
 		</div>
+
+		
 		<div class="form-group">
 			<label for="diaryType" class="col-sm-3 control-label">日记类型：</label>
 			<div class="col-sm-7">
@@ -42,6 +44,17 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		<div class="form-group">
+			<label for="diaryTheme" class="col-sm-3 control-label">日记主题：</label>
+			<div class="col-sm-7">
+				<div class="input-group" style="width:100%">
+					<t:dictSelect field="diaryTheme" type="list" extendJson="{class:'form-control input-sm'}"   typeGroupCode="d_theme"  hasLabel="false"  title="日记主题"></t:dictSelect>     
+				</div>
+			</div>
+		</div>
+		
 					<div class="form-group">
 						<label for="content" class="col-sm-3 control-label">内容：</label>
 						<div class="col-sm-7">

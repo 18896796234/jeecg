@@ -15,10 +15,10 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
    <t:dgCol title="日期"  field="diaryDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="标题"  field="title"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="日记主题"  field="diaryTheme"  queryMode="single"   width="120"  dictionary="diary_theme"></t:dgCol>
-   <t:dgCol title="日记类型"  field="diaryType"  queryMode="single"   width="120"  dictionary="diary_type"></t:dgCol>
-   <t:dgCol title="内容"  field="content" hidden="true" queryMode="single"  width="100"></t:dgCol>
+   <t:dgCol title="标题"  field="title" query = "true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="日记主题"  field="diaryTheme" query = "true" queryMode="single"   width="120"  dictionary="diary_theme"></t:dgCol>
+   <t:dgCol title="日记类型"  field="diaryType" query = "true" queryMode="single"   width="120"  dictionary="diary_type"></t:dgCol>
+   <t:dgCol title="内容"  field="content" query = "true" hidden="true" queryMode="single"  width="100"></t:dgCol>
    
    <t:dgCol title="创建日期"  field="createDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>

@@ -25,30 +25,33 @@
 				</div>
 			</div>
 		</div>
+		
 		<div class="form-group">
 			<label for="username" class="col-sm-3 control-label">用户名：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-					<input id="username" name="username" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入用户名"  ignore="ignore" />
+					<t:dictSelect field="username" type="list"
+									dictTable="t_s_base_user" dictField="username" dictText="realname"  defaultVal="peijichao" hasLabel="false"  title="用户" extendJson="{class:'form-control input-sm'}" ></t:dictSelect>     
 				</div>
 			</div>
 		</div>
-		<div class="form-group">
-			<label for="direction" class="col-sm-3 control-label">方向：</label>
-			<div class="col-sm-7">
-				<div class="input-group" style="width:100%">
-					<input id="direction" name="direction" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入方向"  ignore="ignore" />
-				</div>
+		
+	<div class="form-group">
+		<label for="direction" class="col-sm-3 control-label">方向：</label>
+		<div class="col-sm-7">
+			<div class="input-group" style="width:100%">
+               <t:dictSelect field="direction" type="list" extendJson="{class:'form-control input-sm'}"   typeGroupCode="f_dire"  hasLabel="false"  title="方向" defaultVal="${fCapitalFlow.direction}"></t:dictSelect>
 			</div>
 		</div>
-		<div class="form-group">
-			<label for="flowType" class="col-sm-3 control-label">流水类型：</label>
-			<div class="col-sm-7">
-				<div class="input-group" style="width:100%">
-					<input id="flowType" name="flowType" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入流水类型"  ignore="ignore" />
-				</div>
+	</div>
+	<div class="form-group">
+		<label for="flowType" class="col-sm-3 control-label">流水类型：</label>
+		<div class="col-sm-7">
+			<div class="input-group" style="width:100%">
+               <t:dictSelect field="flowType" type="list" extendJson="{class:'form-control input-sm'}"   typeGroupCode="f_type"  hasLabel="false"  title="流水类型" defaultVal="${fCapitalFlow.flowType}"></t:dictSelect>
 			</div>
 		</div>
+	</div>
 		<div class="form-group">
 			<label for="flowType" class="col-sm-3 control-label">日期：</label>
 			<div class="col-sm-7">

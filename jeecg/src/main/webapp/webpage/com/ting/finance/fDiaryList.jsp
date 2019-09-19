@@ -25,10 +25,10 @@
    
    <t:dgCol title="操作" field="opt" width="120"></t:dgCol>
    <t:dgDelOpt title="删除" url="fDiaryController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="fDiaryController.do?goAdd" funname="add"  width="768"></t:dgToolBar>
-   <t:dgToolBar title="编辑" icon="icon-edit" url="fDiaryController.do?goUpdate" funname="update"  width="768"></t:dgToolBar>
+   <t:dgToolBar title="录入" icon="icon-add" url="fDiaryController.do?goAdd" funname="add"  width="1000" height="600"></t:dgToolBar>
+   <t:dgToolBar title="编辑" icon="icon-edit" url="fDiaryController.do?goUpdate" funname="update"  width="1000" height="600"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="fDiaryController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
-   <t:dgToolBar title="查看" icon="icon-search" url="fDiaryController.do?goLook" funname="detail"  width="768"></t:dgToolBar>
+   <t:dgToolBar title="查看" icon="icon-search" url="fDiaryController.do?goLook" funname="detail"  width="1000" height="600"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>

@@ -14,9 +14,10 @@
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true" queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
+   <t:dgCol title="日期"  field="day"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="金额"  field="amount"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="用户名"  field="username"  queryMode="single"  dictionary="t_s_base_user,username,realname"  width="120"></t:dgCol>
    <t:dgCol title="方向"  field="direction"  queryMode="single"  dictionary="f_dire"  width="120"></t:dgCol>
+   <t:dgCol title="用户名"  field="username"  queryMode="single"  dictionary="t_s_base_user,username,realname"  width="120"></t:dgCol>
    <t:dgCol title="流水类型"  field="flowType"  queryMode="single"  dictionary="f_type"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="remark"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>

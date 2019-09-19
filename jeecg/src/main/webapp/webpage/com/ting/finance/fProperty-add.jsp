@@ -30,7 +30,7 @@
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
 					<t:dictSelect field="username" type="list"
-									dictTable="t_s_base_user" dictField="username" dictText="realname" defaultVal="peijichao" hasLabel="false"  title="用户" ></t:dictSelect>     
+									dictTable="t_s_base_user" dictField="username" dictText="realname" defaultVal="peijichao" hasLabel="false"  title="用户" extendJson="{class:'form-control input-sm'}"  ></t:dictSelect>     
 				</div>
 			</div>
 		</div>
@@ -39,7 +39,7 @@
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
 					<t:dictSelect field="org" type="list"
-									typeGroupCode="f_org"  hasLabel="false"  title="机构" ></t:dictSelect>      
+									typeGroupCode="f_org"  hasLabel="false"  title="机构" extendJson="{class:'form-control input-sm'}"  ></t:dictSelect>      
 				</div>
 			</div>
 		</div>

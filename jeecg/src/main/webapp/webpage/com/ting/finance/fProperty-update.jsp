@@ -25,20 +25,23 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-group">
-		<label for="username" class="col-sm-3 control-label">用户名：</label>
-		<div class="col-sm-7">
-			<div class="input-group" style="width:100%">
-				<input id="username" name="username" value='${fProperty.username}' type="text" maxlength="32" class="form-control input-sm" placeholder="请输入用户名"  ignore="ignore" />
+	
+			<div class="form-group">
+			<label for="username" class="col-sm-3 control-label">用户名：</label>
+			<div class="col-sm-7">
+				<div class="input-group" style="width:100%">
+					<t:dictSelect field="username" type="list"
+									dictTable="t_s_base_user" dictField="username" dictText="realname" defaultVal="${fProperty.username}" hasLabel="false"  title="用户" extendJson="{class:'form-control input-sm'}"></t:dictSelect>     
+				</div>
 			</div>
 		</div>
-	</div>
+	
 	<div class="form-group">
 			<label for="content" class="col-sm-3 control-label">机构：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
 				<t:dictSelect field="org" type="list"
-					typeGroupCode="f_org" defaultVal="${fProperty.org}"  hasLabel="false"  title="机构" ></t:dictSelect>      
+					typeGroupCode="f_org" defaultVal="${fProperty.org}"  hasLabel="false"  title="机构"  extendJson="{class:'form-control input-sm'}" ></t:dictSelect>      
 				</div>
 			</div>
 		</div>

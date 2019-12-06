@@ -17,7 +17,7 @@
    <t:dgCol title="月份"  field="month" query = "true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="余额"  field="balance"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="用户名"  field="username"  queryMode="single"  dictionary="t_s_base_user,username,realname"  width="120"></t:dgCol>
-   <t:dgCol title="机构"  field="org"  queryMode="single"  width="120" dictionary="f_org"></t:dgCol>
+   <t:dgCol title="机构"  field="org" query = "true"   queryMode="single"  width="120" dictionary="f_org"></t:dgCol>
    <t:dgCol title="描述"  field="content"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="fPropertyController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>

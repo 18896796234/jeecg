@@ -56,7 +56,7 @@
 			<label for="flowType" class="col-sm-3 control-label">日期：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-					<input id="day" name="day" type="text" maxlength="32" class="form-control input-sm" placeholder="日期" value="${day }" ignore="ignore" />
+					<input id="day" name="day" type="text" maxlength="32" class="form-control input-sm" placeholder="日E期2" value="${day }" ignore="ignore" />
 				</div>
 			</div>
 		</div>

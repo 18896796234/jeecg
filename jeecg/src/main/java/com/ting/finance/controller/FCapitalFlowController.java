@@ -211,7 +211,7 @@ public class FCapitalFlowController extends BaseController {
 	 */
 	@RequestMapping(params = "goAdd")
 	public ModelAndView goAdd(FCapitalFlowEntity fCapitalFlow, HttpServletRequest req) {
-		String day = DateUtilPJC.getNow("YYYYMMDD");
+		String day = DateUtilPJC.getNow("yyyyMMdd");
 		req.setAttribute("day", day);
 		if (StringUtil.isNotEmpty(fCapitalFlow.getId())) {
 			fCapitalFlow = fCapitalFlowService.getEntity(FCapitalFlowEntity.class, fCapitalFlow.getId());

@@ -46,7 +46,14 @@
 			</div>
 		</div>
 	</div>
-	
+	<div class="form-group">
+		<label for="reportType" class="col-sm-3 control-label">报表类型：</label>
+		<div class="col-sm-7">
+			<div class="input-group" style="width:100%">
+               <t:dictSelect field="reportType" type="list" extendJson="{class:'form-control input-sm'}"   typeGroupCode="r_type"  hasLabel="false"  title="流水类型" defaultVal="${fCapitalFlow.reportType}"></t:dictSelect>
+			</div>
+		</div>
+	</div>
 	<div class="form-group">
 		<label for="flowType" class="col-sm-3 control-label">流水类型：</label>
 		<div class="col-sm-7">

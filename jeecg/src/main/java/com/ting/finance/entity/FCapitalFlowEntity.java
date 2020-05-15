@@ -68,6 +68,9 @@ public class FCapitalFlowEntity implements java.io.Serializable {
 	/**日期*/
 	@Excel(name="日期",width=15)
 	private java.lang.String day;
+	/**流水类型*/
+	@Excel(name="流水类型",width=15,dicCode="r_type")
+	private java.lang.String reportType;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -345,5 +348,23 @@ public class FCapitalFlowEntity implements java.io.Serializable {
 	 */
 	public void setDay(java.lang.String day){
 		this.day = day;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  流水类型
+	 */
+
+	@Column(name ="REPORT_TYPE",nullable=true,length=32)
+	public java.lang.String getReportType(){
+		return this.reportType;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  流水类型
+	 */
+	public void setReportType(java.lang.String reportType){
+		this.reportType = reportType;
 	}
 }

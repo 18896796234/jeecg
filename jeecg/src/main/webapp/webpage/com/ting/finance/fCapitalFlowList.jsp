@@ -18,6 +18,7 @@
    <t:dgCol title="金额"  field="amount"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方向"  field="direction" query="true" queryMode="single"  dictionary="f_dire"  width="120"></t:dgCol>
    <t:dgCol title="用户名"  field="username"  queryMode="single"  dictionary="t_s_base_user,username,realname"  width="120"></t:dgCol>
+   <t:dgCol title="报表类型"  field="reportType" query="true"  queryMode="single"  dictionary="r_type"  width="120"></t:dgCol>
    <t:dgCol title="流水类型"  field="flowType" query="true"  queryMode="single"  dictionary="f_type"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="remark" query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>

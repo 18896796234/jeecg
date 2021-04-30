@@ -118,12 +118,14 @@ public class PasswordUtil {
 			cipher.init(Cipher.DECRYPT_MODE, key, parameterSpec);
 
 			passDec = cipher.doFinal(hexStringToBytes(ciphertext));
+			return new String(passDec);
 		}
 
 		catch (Exception e) {
+			return "";
 			// TODO: handle exception
 		}
-		return new String(passDec);
+		//return new String(passDec);
 	}
 
 	/**

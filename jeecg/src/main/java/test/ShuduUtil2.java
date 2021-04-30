@@ -1,5 +1,7 @@
 package test;
 
+import org.jeecgframework.core.util.PasswordUtil;
+
 import java.math.BigDecimal;
 import java.util.*;
 
@@ -107,7 +109,11 @@ public class ShuduUtil2 {
 
     public static void main(String[] args) {
 
+        print(PasswordUtil.encrypt("peijichao","QQ460216367", PasswordUtil.getStaticSalt()));
+      //  !"QQ460216367".equals(PasswordUtil.encrypt("peijichao","QQ460216367", PasswordUtil.getStaticSalt()))
 
+        print(PasswordUtil.decrypt("c4bebf14f60386139fd414ba2f847ffd", "QQ460216367"
+                ,PasswordUtil.getStaticSalt()));
         /*
 StringBuffer a = new StringBuffer ("A");
 StringBuffer b = new StringBuffer ("B");

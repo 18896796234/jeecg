@@ -645,7 +645,7 @@
 	<build>
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
-	        <!--<plugin>
+	        <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>  
                 <version>2.3.2</version>  
                 <configuration>  
@@ -653,7 +653,7 @@
                     <target>1.7</target>  
                     <encoding>UTF-8</encoding>
                 </configuration>  
-            </plugin>-->
+            </plugin>
             <!-- tomcat7插件 -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -696,6 +696,14 @@
 		          <skipTests>true</skipTests>  
 		        </configuration>  
 		    </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>7</source>
+					<target>7</target>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>

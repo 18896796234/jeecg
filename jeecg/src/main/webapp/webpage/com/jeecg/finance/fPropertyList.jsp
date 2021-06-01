@@ -23,7 +23,10 @@
    <t:dgDelOpt title="删除" url="fPropertyController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="fPropertyController.do?goAdd" funname="add"  width="768"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="fPropertyController.do?goUpdate" funname="update"  width="768"></t:dgToolBar>
-<%--    <t:dgToolBar title="批量删除"  icon="icon-remove" url="fPropertyController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <t:dgToolBar title="复制" icon="icon-copy" url="fPropertyController.do?goCopy" funname="update"  width="768"></t:dgToolBar>
+
+
+   <%--    <t:dgToolBar title="批量删除"  icon="icon-remove" url="fPropertyController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="fPropertyController.do?goUpdate" funname="detail"  width="768"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>

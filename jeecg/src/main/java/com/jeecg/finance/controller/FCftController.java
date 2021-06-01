@@ -1,4 +1,6 @@
 package com.jeecg.finance.controller;
+import com.jeecg.finance.common.util.DateUtilPJC;
+import com.jeecg.finance.common.util.StringUtilPJC;
 import com.jeecg.finance.entity.FCftEntity;
 import com.jeecg.finance.service.FCftServiceI;
 
@@ -185,11 +187,17 @@ public class FCftController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "理财更新成功";
-		FCftEntity t = fCftService.get(FCftEntity.class, fCft.getId());
+
 		try {
-			MyBeanUtils.copyBeanNotNull2Bean(fCft, t);
-			fCftService.saveOrUpdate(t);
-			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+			if (StringUtilPJC.isNotNull(fCft.getId())) {
+				FCftEntity t = fCftService.get(FCftEntity.class, fCft.getId());
+				MyBeanUtils.copyBeanNotNull2Bean(fCft, t);
+				fCftService.saveOrUpdate(t);
+				systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+			} else {
+				fCftService.save(fCft);
+				systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "理财更新失败";
@@ -207,11 +215,10 @@ public class FCftController extends BaseController {
 	 */
 	@RequestMapping(params = "goAdd")
 	public ModelAndView goAdd(FCftEntity fCft, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(fCft.getId())) {
-			fCft = fCftService.getEntity(FCftEntity.class, fCft.getId());
-			req.setAttribute("fCft", fCft);
-		}
-		return new ModelAndView("com/jeecg/finance/fCft-add");
+		String month = DateUtilPJC.getNow("YYYYMM");
+		fCft.setMonth(month);
+		req.setAttribute("fCft", fCft);
+		return new ModelAndView("com/jeecg/finance/fCft-update");
 	}
 	/**
 	 * 理财编辑页面跳转
@@ -222,6 +229,23 @@ public class FCftController extends BaseController {
 	public ModelAndView goUpdate(FCftEntity fCft, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(fCft.getId())) {
 			fCft = fCftService.getEntity(FCftEntity.class, fCft.getId());
+			req.setAttribute("fCft", fCft);
+		}
+		return new ModelAndView("com/jeecg/finance/fCft-update");
+	}
+
+	/**
+	 * 理财编辑页面跳转
+	 *
+	 * @return
+	 */
+	@RequestMapping(params = "goCopy")
+	public ModelAndView goCopy(FCftEntity fCft, HttpServletRequest req) {
+		String month = DateUtilPJC.getNow("YYYYMM");
+		if (StringUtil.isNotEmpty(fCft.getId())) {
+			fCft = fCftService.getEntity(FCftEntity.class, fCft.getId());
+			fCft.setId("");
+			fCft.setMonth(month);
 			req.setAttribute("fCft", fCft);
 		}
 		return new ModelAndView("com/jeecg/finance/fCft-update");

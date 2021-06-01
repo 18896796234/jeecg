@@ -52,7 +52,7 @@ public class FCftEntity implements java.io.Serializable {
 	private String bpmStatus;
 	/**平台*/
 	@Excel(name="平台",width=15)
-	private String fCft;
+	private String org;
 	/**理财项目*/
 	@Excel(name="理财项目",width=15)
 	private String project;
@@ -244,17 +244,17 @@ public class FCftEntity implements java.io.Serializable {
 	 *@return: java.lang.String  平台
 	 */
 
-	@Column(name ="F_CFT",nullable=true,length=32)
-	public String getFCft(){
-		return this.fCft;
+	@Column(name ="ORG",nullable=true,length=32)
+	public String getOrg(){
+		return this.org;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  平台
 	 */
-	public void setFCft(String fCft){
-		this.fCft = fCft;
+	public void setOrg(String org){
+		this.org = org;
 	}
 	/**
 	 *方法: 取得java.lang.String

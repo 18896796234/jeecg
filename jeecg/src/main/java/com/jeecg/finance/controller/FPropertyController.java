@@ -4,6 +4,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.jeecg.finance.common.util.StringUtilPJC;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -186,11 +187,16 @@ public class FPropertyController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "财产更新成功";
-		FPropertyEntity t = fPropertyService.get(FPropertyEntity.class, fProperty.getId());
 		try {
-			MyBeanUtils.copyBeanNotNull2Bean(fProperty, t);
-			fPropertyService.saveOrUpdate(t);
-			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+			if (StringUtilPJC.isNotNull(fProperty.getId())) {
+				FPropertyEntity t = fPropertyService.get(FPropertyEntity.class, fProperty.getId());
+				MyBeanUtils.copyBeanNotNull2Bean(fProperty, t);
+				fPropertyService.saveOrUpdate(t);
+				systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+			} else {
+				fPropertyService.save(fProperty);
+				systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "财产更新失败";
@@ -209,12 +215,9 @@ public class FPropertyController extends BaseController {
 	@RequestMapping(params = "goAdd")
 	public ModelAndView goAdd(FPropertyEntity fProperty, HttpServletRequest req) {
 		String month = DateUtilPJC.getNow("YYYYMM");
-		req.setAttribute("month", month);
-		if (StringUtil.isNotEmpty(fProperty.getId())) {
-			fProperty = fPropertyService.getEntity(FPropertyEntity.class, fProperty.getId());
-			req.setAttribute("fProperty", fProperty);
-		}
-		return new ModelAndView("com/jeecg/finance/fProperty-add");
+		fProperty.setMonth(month);
+		req.setAttribute("fProperty", fProperty);
+		return new ModelAndView("com/jeecg/finance/fProperty-update");
 	}
 	/**
 	 * 财产编辑页面跳转
@@ -227,6 +230,23 @@ public class FPropertyController extends BaseController {
 		req.setAttribute("month", month);
 		if (StringUtil.isNotEmpty(fProperty.getId())) {
 			fProperty = fPropertyService.getEntity(FPropertyEntity.class, fProperty.getId());
+			req.setAttribute("fProperty", fProperty);
+		}
+		return new ModelAndView("com/jeecg/finance/fProperty-update");
+	}
+
+	/**
+	 * 财产编辑页面跳转
+	 *
+	 * @return
+	 */
+	@RequestMapping(params = "goCopy")
+	public ModelAndView goCopy(FPropertyEntity fProperty, HttpServletRequest req) {
+		String month = DateUtilPJC.getNow("YYYYMM");
+		if (StringUtil.isNotEmpty(fProperty.getId())) {
+			fProperty = fPropertyService.getEntity(FPropertyEntity.class, fProperty.getId());
+			fProperty.setId("");
+			fProperty.setMonth(month);
 			req.setAttribute("fProperty", fProperty);
 		}
 		return new ModelAndView("com/jeecg/finance/fProperty-update");

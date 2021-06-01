@@ -18,10 +18,11 @@
 		<input type="hidden" id="btn_sub" class="btn_sub"/>
 		<input type="hidden" id="id" name="id"/>
 		<div class="form-group">
-			<label for="fCft" class="col-sm-3 control-label">平台：</label>
+			<label for="org" class="col-sm-3 control-label">平台：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-					<input id="fCft" name="fCft" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入平台"  ignore="ignore" />
+					<t:dictSelect field="org" type="list"
+								  typeGroupCode="f_org"  hasLabel="false"  title="机构" extendJson="{class:'form-control input-sm'}"  ></t:dictSelect>
 				</div>
 			</div>
 		</div>
@@ -29,7 +30,8 @@
 			<label for="project" class="col-sm-3 control-label">理财项目：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-					<input id="project" name="project" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入理财项目"  ignore="ignore" />
+					<t:dictSelect field="project" type="list"
+								  typeGroupCode="f_project"  hasLabel="false"  title="理财项目" extendJson="{class:'form-control input-sm'}"  ></t:dictSelect>
 				</div>
 			</div>
 		</div>
@@ -37,7 +39,7 @@
 			<label for="month" class="col-sm-3 control-label">月份：</label>
 			<div class="col-sm-7">
 				<div class="input-group" style="width:100%">
-					<input id="month" name="month" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入月份"  ignore="ignore" />
+					<input id="month" name="month" type="text" maxlength="32" class="form-control input-sm" placeholder="请输入月份" value="${month }"  ignore="ignore" />
 				</div>
 			</div>
 		</div>

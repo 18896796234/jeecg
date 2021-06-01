@@ -14,8 +14,8 @@
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
-   <t:dgCol title="平台"  field="fCft"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="理财项目"  field="project"  query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="平台"  field="Org"  query="true"  queryMode="single" dictionary="f_org" width="120"></t:dgCol>
+   <t:dgCol title="理财项目"  field="project"  query="true"  queryMode="single" dictionary="f_project" width="120"></t:dgCol>
    <t:dgCol title="月份"  field="month"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="金额"  field="balance"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="变动金额"  field="flows"  queryMode="single"  width="120"></t:dgCol>
@@ -23,11 +23,12 @@
    <t:dgDelOpt title="删除" url="fCftController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="fCftController.do?goAdd" funname="add"  width="768"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="fCftController.do?goUpdate" funname="update"  width="768"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="fCftController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <t:dgToolBar title="复制" icon="icon-copy" url="fCftController.do?goCopy" funname="update"  width="768"></t:dgToolBar>
+<%--   <t:dgToolBar title="批量删除"  icon="icon-remove" url="fCftController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="fCftController.do?goUpdate" funname="detail"  width="768"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>--%>
   </t:datagrid>
   </div>
  </div>

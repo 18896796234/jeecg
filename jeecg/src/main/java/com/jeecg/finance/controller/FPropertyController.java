@@ -86,6 +86,9 @@ public class FPropertyController extends BaseController {
 	public void datagrid(FPropertyEntity fProperty,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(FPropertyEntity.class, dataGrid);
 		//查询条件组装器
+		if (!"admin".equalsIgnoreCase(ResourceUtil.getSessionUser().getUserName())) {
+			fProperty.setUsername(ResourceUtil.getSessionUser().getUserName());
+		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, fProperty, request.getParameterMap());
 		try{
 		//自定义追加查询条件
@@ -217,6 +220,7 @@ public class FPropertyController extends BaseController {
 		String month = DateUtilPJC.getNow("YYYYMM");
 		fProperty.setMonth(month);
 		req.setAttribute("fProperty", fProperty);
+		req.setAttribute("userName", ResourceUtil.getSessionUser().getUserName());
 		return new ModelAndView("com/jeecg/finance/fProperty-update");
 	}
 	/**

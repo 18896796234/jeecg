@@ -48,10 +48,10 @@ public class ShuduUtil3 {
 
     private static Integer[] a1 = {1,2,3,4,5,6,7,8,9};
     private static Integer[] a2 = {2,3,4,5,6,7,8,9,1};
-    private static Integer[] a3 = {0,0,0,0,0,0,0,0,0};
-    private static Integer[] a4 = {0,0,0,0,0,0,0,0,0};
-    private static Integer[] a5 = {0,0,0,0,0,0,0,0,0};
-    private static Integer[] a6 = {0,0,0,0,0,0,0,0,0};
+    private static Integer[] a3 = {0,2,0,0,0,0,0,0,0};
+    private static Integer[] a4 = {0,0,0,0,4,0,0,0,0};
+    private static Integer[] a5 = {0,0,0,0,0,8,0,0,0};
+    private static Integer[] a6 = {0,0,0,0,0,0,0,9,0};
     private static Integer[] a7 = {0,0,0,0,0,0,0,0,0};
     private static Integer[] a8 = {0,0,0,0,0,0,0,0,0};
     private static Integer[] a9 = {0,0,0,0,0,0,0,0,0};

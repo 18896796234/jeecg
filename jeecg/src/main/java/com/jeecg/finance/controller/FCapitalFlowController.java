@@ -85,10 +85,13 @@ public class FCapitalFlowController extends BaseController {
 	public void datagrid(FCapitalFlowEntity fCapitalFlow,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(FCapitalFlowEntity.class, dataGrid);
 		//查询条件组装器
+		if (!"admin".equalsIgnoreCase(ResourceUtil.getSessionUser().getUserName())) {
+			fCapitalFlow.setUsername(ResourceUtil.getSessionUser().getUserName());
+		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, fCapitalFlow, request.getParameterMap());
 		try{
 		//自定义追加查询条件
-		
+
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
@@ -214,6 +217,8 @@ public class FCapitalFlowController extends BaseController {
 			fCapitalFlow = fCapitalFlowService.getEntity(FCapitalFlowEntity.class, fCapitalFlow.getId());
 			req.setAttribute("fCapitalFlow", fCapitalFlow);
 		}
+		req.setAttribute("userName", ResourceUtil.getSessionUser().getUserName());
+
 		return new ModelAndView("com/jeecg/finance/fCapitalFlow-add");
 	}
 	/**

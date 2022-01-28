@@ -81,6 +81,9 @@ public class FAccountController extends BaseController {
 	public void datagrid(FAccountEntity fAccount,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(FAccountEntity.class, dataGrid);
 		//查询条件组装器
+		if (!"admin".equalsIgnoreCase(ResourceUtil.getSessionUser().getUserName())) {
+			fAccount.setUsername(ResourceUtil.getSessionUser().getUserName());
+		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, fAccount, request.getParameterMap());
 		try{
 		//自定义追加查询条件
@@ -218,6 +221,7 @@ public class FAccountController extends BaseController {
 			fAccount = fAccountService.getEntity(FAccountEntity.class, fAccount.getId());
 			req.setAttribute("fAccount", fAccount);
 		}
+		req.setAttribute("userName", ResourceUtil.getSessionUser().getUserName());
 		return new ModelAndView("com/jeecg/finance/fAccount-add");
 	}
 	/**

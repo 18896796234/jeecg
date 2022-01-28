@@ -20,12 +20,7 @@ import org.jeecgframework.core.online.def.CgReportConstant;
 import org.jeecgframework.core.online.exception.CgReportNotFoundException;
 import org.jeecgframework.core.online.util.CgReportQueryParamUtil;
 import org.jeecgframework.core.online.util.FreemarkerHelper;
-import org.jeecgframework.core.util.ContextHolderUtils;
-import org.jeecgframework.core.util.DynamicDBUtil;
-import org.jeecgframework.core.util.SqlInjectionUtil;
-import org.jeecgframework.core.util.SqlUtil;
-import org.jeecgframework.core.util.StringUtil;
-import org.jeecgframework.core.util.SysThemesUtil;
+import org.jeecgframework.core.util.*;
 import org.jeecgframework.web.cgdynamgraph.service.core.CgDynamGraphServiceI;
 import org.jeecgframework.web.cgreport.service.core.CgReportServiceI;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -185,6 +180,10 @@ public class CgDynamGraphController extends BaseController {
 		//step.2 获取该配置的查询SQL
 		Map configM = (Map) cgDynamGraphMap.get(CgReportConstant.MAIN);
 		String querySql = (String) configM.get(CgReportConstant.CONFIG_SQL);
+		if (querySql.contains("userNameParam")) {
+			querySql = querySql.replace("${userNameParam}", ResourceUtil.getSessionUser().getUserName());
+		}
+
 		List<Map<String,Object>> items = (List<Map<String, Object>>) cgDynamGraphMap.get(CgReportConstant.ITEMS);
 		List<String> paramList = (List<String>) cgDynamGraphMap.get(CgReportConstant.PARAMS);
 		//页面参数查询字段（占位符的条件语句）

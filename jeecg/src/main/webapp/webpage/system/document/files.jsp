@@ -27,7 +27,7 @@
 	</div>
 	</fieldset>
 </t:formvalid>
-<input type="hidden" id = "attachment" <c:if test="${not empty attachment }">value="1"</c:if> />
+<input type="hidden" id = "attachment" <c:if test="${not empty attachment }">value="1"</c:if> /><%--
 <script type="text/javascript">
 function myBeforeSubmit(){
 	var fileLen = $("#filediv").find(".uploadify-queue-item").length;
@@ -66,6 +66,6 @@ function myBeforeSubmit(){
 		}
 	}
 }
-</script>
+</script>--%>
 </body>
 </html>

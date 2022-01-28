@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.jeecgframework.core.util.*;
 import org.jeecgframework.web.cgreport.service.core.CgReportServiceI;
 import org.jeecgframework.web.graphreport.service.core.GraphReportServiceI;
 import org.jeecgframework.web.system.service.SystemService;
@@ -28,10 +29,6 @@ import org.jeecgframework.core.online.def.CgReportConstant;
 import org.jeecgframework.core.online.exception.CgReportNotFoundException;
 import org.jeecgframework.core.online.util.CgReportQueryParamUtil;
 import org.jeecgframework.core.online.util.FreemarkerHelper;
-import org.jeecgframework.core.util.BrowserUtils;
-import org.jeecgframework.core.util.ContextHolderUtils;
-import org.jeecgframework.core.util.StringUtil;
-import org.jeecgframework.core.util.SysThemesUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -254,6 +251,9 @@ public class GraphReportController extends BaseController {
 			//step.2 获取该配置的查询SQL
 			Map configM = (Map) cgReportMap.get(CgReportConstant.MAIN);
 			String querySql = (String) configM.get("CGR_SQL");
+			if (querySql.contains("userNameParam")) {
+				querySql = querySql.replace("${userNameParam}", ResourceUtil.getSessionUser().getUserName());
+			}
 			List<Map<String,Object>> items = (List<Map<String, Object>>) cgReportMap.get(CgReportConstant.ITEMS);
 			//页面参数查询字段（占位符的条件语句）
 			Map pageSearchFields =  new LinkedHashMap<String,Object>();

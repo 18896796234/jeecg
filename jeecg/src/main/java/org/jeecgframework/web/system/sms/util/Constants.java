@@ -8,9 +8,9 @@ package org.jeecgframework.web.system.sms.util;
 public class Constants {
 	//邮件发送配置
 		public static final String SMTP_HOST = "mail.qq.com";
-		public static final String MAIL_SENDER = "819164014@qq.com";
-		public static final String SENDER_USER = "819164014@qq.com";
-		public static final String SENDER_PASSWD = "*****"; //密码
+		public static final String MAIL_SENDER = "460216367@qq.com";
+		public static final String SENDER_USER = "460216367@qq.com";
+		public static final String SENDER_PASSWD = "QQ1499961274"; //密码
 		//短信发送配置
 		public static final String SPID = "f8510a293f61c826013f61d2abb50005";
 		public static final String OSPID = "f8510a283f645140013f646cfe690014";
